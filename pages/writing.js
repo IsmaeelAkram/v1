@@ -10,7 +10,7 @@ export default function Writing({ posts }) {
 			<Head>
 				<title>{genTitle('Writing')}</title>
 			</Head>
-			<PageContainer>
+			<PageContainer title="Writing">
 				<div className="grid grid-flow-row md:grid-cols-3 grid-rows-3 gap-3">
 					{posts.map((post) => {
 						return (
