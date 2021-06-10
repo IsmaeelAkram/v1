@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 const pages = [
+	{ path: '/', name: '🏠' },
 	{ path: '/about', name: 'About' },
 	{ path: '/writing', name: 'Writing' },
 	{ path: '/projects', name: 'Projects' },

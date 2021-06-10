@@ -12,11 +12,7 @@ class MyDocument extends Document {
 	render() {
 		return (
 			<Html lang="en">
-				<Head>
-					<meta charset="UTF-8" />
-					<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-					{this.props.styleTags}
-				</Head>
+				<Head>{this.props.styleTags}</Head>
 				<body className="dark:bg-gray-900">
 					<Main />
 					<NextScript />
