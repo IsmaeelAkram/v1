@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { useState } from 'react';
 
 const pages = [
 	{ path: '/about', name: 'About' },
@@ -12,7 +11,10 @@ export default function Nav() {
 		<div className="flex flex-row mb-2">
 			{pages.map((page) => {
 				return (
-					<div className="rounded-sm mr-3 hover:bg-gray-100 transition" key={page.name}>
+					<div
+						className="rounded-sm mr-3 p-1 hover:bg-gray-100 dark:hover:bg-gray-900 transition"
+						key={page.name}
+					>
 						<Link href={page.path}>{page.name}</Link>
 					</div>
 				);
