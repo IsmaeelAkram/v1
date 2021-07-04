@@ -14,15 +14,20 @@ export default function Writing({ posts }) {
 				<div className="grid grid-flow-row md:grid-cols-3 grid-rows-3 gap-3">
 					{posts.map((post) => {
 						return (
-							<Link href={`/post/${post.slug}`}>
+							<Link href={`/posts/${post.slug}`}>
 								<div className="transition bg-gray-100 dark:bg-gray-900 hover:dark:bg-gray-700 hover:bg-gray-200 cursor-pointer p-5 rounded-lg">
-									<Image
-										src={post.feature_image}
-										className="rounded-lg"
-										objectFit="cover"
-										height={150}
-										width={400}
-									/>
+									{post.feature_image ? (
+										<Image
+											src={post.feature_image}
+											className="rounded-lg"
+											objectFit="cover"
+											height={150}
+											width={400}
+										/>
+									) : (
+										<></>
+									)}
+
 									<h3 className="text-2xl font-semibold mb-2 mt-3">{post.title}</h3>
 									<p>{post.excerpt}</p>
 								</div>
