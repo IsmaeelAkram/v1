@@ -26,10 +26,9 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths(context) {
-	let paths = posts;
 	let slugPaths = [];
-	paths.forEach((path) => {
-		posts.push({ params: { slug: path.slug } });
+	posts.forEach((post) => {
+		slugPaths.push({ params: { slug: post.slug } });
 	});
 	return {
 		paths: slugPaths,
