@@ -24,7 +24,13 @@ export default function Home() {
 				<h1
 					className="text-6xl pb-2 font-extrabold border-yellow-400 border-8 border-t-0 border-l-0 border-r-0 cursor-pointer"
 					onClick={() => {
-						confetti({ particleCount: 100, spread: 70, origin: { y: 0.9, x: 0.2 } });
+						confetti({
+							particleCount: 200,
+							spread: 100,
+							origin: { y: 0.15, x: 0.05 },
+							angle: -40,
+							disableForReducedMotion: true,
+						});
 					}}
 				>
 					Hello, I'm Ismaeel.
