@@ -1,8 +1,9 @@
 import Head from 'next/head';
 import genTitle from '../../utils/genTitle';
 import PageContainer from '../../components/PageContainer';
+import posts from '../../posts.json';
 
-export default function Writing(props) {
+export default function Posts(props) {
 	return (
 		<>
 			<Head>
@@ -25,11 +26,10 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths(context) {
-	const res = await fetch(`http://${process.env.VERCEL_URL}/api/posts`);
-	let paths = await res.json();
+	let paths = posts;
 	let slugPaths = [];
 	paths.forEach((path) => {
-		slugPaths.push({ params: { slug: path.slug } });
+		posts.push({ params: { slug: path.slug } });
 	});
 	return {
 		paths: slugPaths,

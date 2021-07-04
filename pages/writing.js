@@ -3,6 +3,7 @@ import genTitle from '../utils/genTitle';
 import PageContainer from '../components/PageContainer';
 import Link from 'next/link';
 import Image from 'next/image';
+import posts from '../posts.json';
 
 export default function Writing({ posts }) {
 	return (
@@ -41,10 +42,9 @@ export default function Writing({ posts }) {
 }
 
 export async function getStaticProps(context) {
-	const res = await fetch(`http://${process.env.VERCEL_URL}/api/posts`);
 	return {
 		props: {
-			posts: await res.json(),
+			posts,
 		},
 	};
 }
