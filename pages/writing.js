@@ -35,7 +35,7 @@ export default function Writing({ posts }) {
 	);
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
 	const res = await fetch(`http://${process.env.VERCEL_URL}/api/posts`);
 	return {
 		props: {
