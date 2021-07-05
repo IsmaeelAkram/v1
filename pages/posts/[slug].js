@@ -20,18 +20,17 @@ export default function Posts(props) {
 }
 
 export async function getStaticProps(context) {
-	const res = await fetch(`http://${process.env.VERCEL_URL}/api/posts/${context.params.slug}`);
-	let props = await res.json();
+	let props = posts.find((post) => post.slug == context.params.slug);
 	return { props: props };
 }
 
 export async function getStaticPaths(context) {
 	let slugPaths = [];
-	posts.forEach((post) => {
+	await posts.forEach((post) => {
 		slugPaths.push({ params: { slug: post.slug } });
 	});
 	return {
 		paths: slugPaths,
-		fallback: false,
+		fallback: true,
 	};
 }
