@@ -31,6 +31,6 @@ export async function getStaticPaths(context) {
 	});
 	return {
 		paths: slugPaths,
-		fallback: true,
+		fallback: false,
 	};
 }
