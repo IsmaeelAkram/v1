@@ -28,3 +28,10 @@ h3 {
 .prose code {
 	color: inherit;
 }
+
+.content .note p {
+	@apply mx-0 my-0 text-gray-500;
+}
+.content .note {
+	@apply bg-gray-100 px-3 py-3 rounded-lg;
+}
