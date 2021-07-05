@@ -12,11 +12,11 @@ export default function Writing({ posts }) {
 				<title>{genTitle('Writing')}</title>
 			</Head>
 			<PageContainer title="Writing">
-				<div className="grid grid-flow-row md:grid-cols-3 grid-rows-3 gap-3">
+				<div className="grid grid-flow-row grid-cols-2 md:grid-cols-3 sm:grid-rows-4 gap-3">
 					{posts.map((post) => {
 						return (
 							<Link href={`/posts/${post.slug}`}>
-								<div className="transition bg-gray-100 dark:bg-gray-900 hover:dark:bg-gray-700 hover:bg-gray-200 cursor-pointer p-5 rounded-lg">
+								<div className="transition bg-gray-100 dark:bg-gray-900 dark:hover:bg-gray-700 hover:bg-gray-200 cursor-pointer p-5 rounded-lg">
 									{post.feature_image ? (
 										<Image
 											src={post.feature_image}
